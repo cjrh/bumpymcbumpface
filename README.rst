@@ -111,4 +111,23 @@ by 1 if you run without arguments. These two are the same:
 
 For a MINOR bump, change the word *patch* to *minor*. Likewise for *major*.
 
+Now that you're using a file called ``VERSION`` in your project root to
+store your version number, how do you get it into your ``setup.py``?
+Just read it in, like this:
+
+.. code-block:: python
+
+    # setup.py
+    from os import path
+    from io import open  # For universal packages + py27
+
+    here = path.abspath(path.dirname(__file__))
+
+    setup(
+        name='bumpymcbumpface',
+        version=open(path.join(here, 'VERSION')).readline().strip(),
+        ...
+    )
+
+
 Good luck!
