@@ -54,7 +54,8 @@ def main():
 
     version_filename = os.path.join(folder, "VERSION")
     version = open(version_filename, encoding="utf-8").readline().strip()
-    if args.show:
+
+    if args.show or args.debug:
         print(version)
         return
 
@@ -69,13 +70,15 @@ def main():
         major=major, minor=minor, patch=patch)
 
     git_status_output = sp.check_output("git status".split())
-    print(git_status_output)
+    if args.debug:
+        print(git_status_output)
+
     if b"Changes not staged for commit:" in git_status_output:
-        print("Repo has uncommitted changes. Cannot continue")
+        print("Repo has uncommitted changes. Stopping for your own safety.")
         sys.exit(1)
 
     if b"Untracked files:" in git_status_output:
-        print("Repo has untracked files. Cannot continue")
+        print("Repo has untracked files. Stopping for your own safety.")
         sys.exit(1)
 
     if args.dry_run:
