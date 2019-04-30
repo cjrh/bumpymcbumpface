@@ -20,9 +20,34 @@ Bumpy McBumpface
 TL,DR
 -----
 
+To run:
+
 .. code-block:: shell
 
     /home/blah/myproject $ bumpymcbumpface --push-git --push-pypi
+
+To get help:
+
+.. code-block:: shell
+
+    /home/blah/myproject $ bumpymcbumpface -h
+    usage: bumpymcbumpface.py [-h] [--debug] [--show] [--dry-run] [--push-git]
+                              [--push-pypi]
+                              [{major,minor,patch}]
+
+    bumpymcbumpface - version-bump, tag, push, deploy
+
+    positional arguments:
+      {major,minor,patch}
+
+    optional arguments:
+      -h, --help           show this help message and exit
+      --debug              Print debugging messages (default: False)
+      --show               Show the current version and exit (default: False)
+      --dry-run            Describe what would be done, and exit (default: False)
+      --push-git           Push the new commit and tag to github (default: False)
+      --push-pypi          Push the new built packages to PyPI (default: False)
+    /home/blah/myproject $
 
 Overview
 --------
