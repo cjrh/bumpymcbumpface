@@ -17,6 +17,16 @@
 Bumpy McBumpface
 ================
 
+TL,DR
+-----
+
+.. code-block:: shell
+
+    /home/blah/myproject $ bumpymcbumpface --push-git --push-pypi
+
+Overview
+--------
+
 When doing a new release, I got real tired of doing these things by hand:
 
 1. Update the version number of my package
@@ -35,11 +45,12 @@ You need to have these:
 
 - A file called ``VERSION`` in your project root, with MAJOR.MINOR.PATCH numbers
 - git
-- twine (set up *keyring* so that twine won't ask you for login/password)
+- twine (set up `keyring <https://twine.readthedocs.io/en/latest/#keyring-support>`_
+  so that twine won't ask you for login/password)
 - pip
 - wheel
 
-You probably SHOULD BE in master branch branch when you run, but you
+You probably **SHOULD BE** in master branch branch when you run, but you
 only need to be in a branch that has a valid remote.
 
 Instructions
@@ -48,17 +59,19 @@ Instructions
 There are a several options, but only two important ones. By default,
 it will NOT do these things automatically:
 
-    - Push to github
-    - Deploy to PyPI
+- Push to github
+- Deploy to PyPI
 
 This is just so that it defaults to "safe" by not affecting anything
 beyond your computer during testing. To make it do these things too,
 run it like this:
 
+.. code-block:: shell
+
     $ bumpymcbumpface --push-git --push-pypi
 
 *Bumpy McBumpface* assumes that your version number is in the following
-format:
+format::
 
     MAJOR.MINOR.PATCH
 
@@ -66,9 +79,11 @@ where each of the three fields is an integer. This also works for
 calendar-based versioning. By default, the PATCH value will be increased
 by 1 if you run without arguments. These two are the same:
 
+.. code-block:: shell
+
     $ bumpymcbumpface --push-git --push-pypi
     $ bumpymcbumpface --push-git --push-pypi patch
 
-For a MINOR bump, change the work *patch* to *minor*. Likewise for *major*.
+For a MINOR bump, change the word *patch* to *minor*. Likewise for *major*.
 
 Good luck!
