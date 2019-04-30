@@ -1,5 +1,5 @@
 .. image:: https://img.shields.io/pypi/pyversions/bumpymcbumpface.svg
-    :target: https://pypi.python.org/pypi/${package}
+    :target: https://pypi.python.org/pypi/bumpymcbumpface
 
 .. image:: https://img.shields.io/github/tag/cjrh/bumpymcbumpface.svg
     :target: https://img.shields.io/github/tag/cjrh/bumpymcbumpface.svg
