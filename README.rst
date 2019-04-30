@@ -1,10 +1,10 @@
-.. image:: https://img.shields.io/pypi/pyversions/${package}.svg
+.. image:: https://img.shields.io/pypi/pyversions/bumpymcbumpface.svg
     :target: https://pypi.python.org/pypi/${package}
 
-.. image:: https://img.shields.io/github/tag/cjrh/${package}.svg
+.. image:: https://img.shields.io/github/tag/cjrh/bumpymcbumpface.svg
     :target: https://img.shields.io/github/tag/cjrh/${package}.svg
 
-.. image:: https://img.shields.io/badge/install-pip%20install%20$bumpymcbumpface-ff69b4.svg
+.. image:: https://img.shields.io/badge/install-pip%20install%20bumpymcbumpface-ff69b4.svg
     :target: https://img.shields.io/badge/install-pip%20install%20$bumpymcbumpface-ff69b4.svg
 
 .. image:: https://img.shields.io/pypi/v/bumpymcbumpface.svg
