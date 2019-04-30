@@ -2,7 +2,7 @@
     :target: https://pypi.python.org/pypi/${package}
 
 .. image:: https://img.shields.io/github/tag/cjrh/bumpymcbumpface.svg
-    :target: https://img.shields.io/github/tag/cjrh/${package}.svg
+    :target: https://img.shields.io/github/tag/cjrh/bumpymcbumpface.svg
 
 .. image:: https://img.shields.io/badge/install-pip%20install%20bumpymcbumpface-ff69b4.svg
     :target: https://img.shields.io/badge/install-pip%20install%20$bumpymcbumpface-ff69b4.svg
