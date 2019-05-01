@@ -89,7 +89,7 @@ def main():
         f.write(new_version)
 
     run("git add {}".format(version_filename))
-    run("git commit -m 'Bump version to {}'".format(new_version))
+    run("git commit -m \"Bump version to {}\"".format(new_version))
     run("git tag v{}".format(new_version))
     if args.push_git:
         run("git push")
