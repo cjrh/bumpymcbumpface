@@ -95,9 +95,9 @@ def main():
         sp.check_call("git push".split(), cwd=folder)
         sp.check_call("git push --tags".split(), cwd=folder)
 
-    sp.run("python setup.py bdist_wheel sdist".split(), cwd=folder)
+    sp.check_call("python setup.py bdist_wheel sdist".split(), cwd=folder)
     if args.push_pypi:
-        sp.run("twine upload --skip-existing dist/*{}*".format(new_version), cwd=folder)
+        sp.check_call("twine upload --skip-existing dist/*{}*".format(new_version), cwd=folder)
 
 
 if __name__ == "__main__":
