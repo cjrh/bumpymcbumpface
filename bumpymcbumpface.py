@@ -88,16 +88,20 @@ def main():
     with open(version_filename, "w", encoding="utf-8") as f:
         f.write(new_version)
 
-    sp.check_call("git add {}".format(version_filename).split(), cwd=folder)
-    sp.check_call(shlex.split("git commit -m 'Bump version to {}'".format(new_version)), cwd=folder)
-    sp.check_call("git tag v{}".format(new_version).split(), cwd=folder)
+    run("git add {}".format(version_filename))
+    run("git commit -m 'Bump version to {}'".format(new_version))
+    run("git tag v{}".format(new_version))
     if args.push_git:
-        sp.check_call("git push".split(), cwd=folder)
-        sp.check_call("git push --tags".split(), cwd=folder)
+        run("git push")
+        run("git push --tags")
 
-    sp.check_call("python setup.py bdist_wheel sdist".split(), cwd=folder)
+    run("python setup.py bdist_wheel sdist")
     if args.push_pypi:
-        sp.check_call("twine upload --skip-existing dist/*{}*".format(new_version), cwd=folder)
+        run("twine upload --skip-existing dist/*{}*".format(new_version))
+
+
+def run(cmd):
+    sp.check_call(cmd, shell=True, cwd=folder)
 
 
 if __name__ == "__main__":
