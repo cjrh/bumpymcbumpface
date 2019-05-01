@@ -95,7 +95,7 @@ def main():
         sp.check_call("git push".split(), cwd=folder)
         sp.check_call("git push --tags".split(), cwd=folder)
 
-    sp.run("{} setup.py bdist_wheel sdist".format(sys.executable).split(), cwd=folder)
+    sp.run("python setup.py bdist_wheel sdist".split(), cwd=folder)
     if args.push_pypi:
         sp.run("twine upload --skip-existing dist/*{}*".format(new_version), cwd=folder)
 
